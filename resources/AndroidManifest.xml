@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1" android:compileSdkVersion="31" android:compileSdkVersionCodename="Tiramisu" package="org.chromium.webapk.a62461adf62f597a7_v2" platformBuildVersionCode="31" platformBuildVersionName="Tiramisu">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.ACTION_MANAGE_TRUSTED_WEB_ACTIVITY_DATA"/>
+            <data android:scheme="https"/>
+        </intent>
+    </queries>
+    <application android:label="@string/short_name" android:icon="@mipmap/ic_launcher" android:allowBackup="false" android:supportsRtl="true">
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="org.chromium.webapk.shell_apk.h2o.H2OTransparentLauncherActivity" android:exported="true" android:excludeFromRecents="true" android:relinquishTaskIdentity="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="pwa.fabapp.com" android:pathPrefix="/away_covid/"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="https" android:host="pwa.fabapp.com" android:pathPrefix="/away_covid/"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="org.chromium.webapk.shell_apk.ManageDataLauncherActivity"/>
+        <activity android:theme="@style/SplashTheme" android:name="org.chromium.webapk.shell_apk.h2o.H2OOpaqueMainActivity" android:enabled="@bool/opaque_main_activity_enabled_default" android:exported="true" android:screenOrientation="unspecified" android:relinquishTaskIdentity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity android:theme="@style/SplashTheme" android:name="org.chromium.webapk.shell_apk.h2o.SplashActivity" android:launchMode="singleTask" android:screenOrientation="unspecified"/>
+        <provider android:name="org.chromium.webapk.shell_apk.h2o.SplashContentProvider" android:exported="true" android:authorities="org.chromium.webapk.a62461adf62f597a7_v2.SplashContentProvider"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="org.chromium.webapk.shell_apk.h2o.H2OMainActivity" android:enabled="@bool/transparent_main_activity_enabled_default" android:exported="true" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity>
+        <meta-data android:name="org.chromium.webapk.shell_apk.shellApkVersion" android:value="144"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.runtimeHost" android:value="com.android.chrome"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.runtimeHostApplicationName" android:value="Chrome"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.startUrl" android:value="https://pwa.fabapp.com/away_covid/"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.scope" android:value="https://pwa.fabapp.com/away_covid/"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.displayMode" android:value="standalone"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.orientation" android:value=""/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.themeColor" android:value="-4515308L"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.backgroundColor" android:value="-8226L"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.defaultBackgroundColorId" android:resource="@color/webapp_default_bg"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.iconId" android:resource="@mipmap/app_icon"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.splashId" android:resource="@drawable/splash_icon"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.isSplashIconMaskableBooleanId" android:resource="@bool/is_splash_icon_maskable"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.distributor" android:value="browser"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.iconUrlsAndIconMurmur2Hashes" android:value="https://pwa.fabapp.com/id/2746950/logo/72x72 0 https://pwa.fabapp.com/id/2746950/logo/96x96 0 https://pwa.fabapp.com/id/2746950/logo/128x128 8816373703384516770 https://pwa.fabapp.com/id/2746950/logo/144x144 0 https://pwa.fabapp.com/id/2746950/logo/152x152 0 https://pwa.fabapp.com/id/2746950/logo/192x192 0 https://pwa.fabapp.com/id/2746950/logo/384x384 15463336586113642599 https://pwa.fabapp.com/id/2746950/logo/512x512 0"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.webManifestUrl" android:value="https://pwa.fabapp.com/id/2746950/manifest.json"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.isNewStyleWebApk" android:value="true"/>
+        <meta-data android:name="org.chromium.webapk.shell_apk.enableSiteSettingsShortcut" android:value="true"/>
+        <service android:name="org.chromium.webapk.shell_apk.WebApkServiceFactory" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.WEBAPK_API"/>
+            </intent-filter>
+        </service>
+        <service android:name="org.chromium.webapk.shell_apk.IdentityService" android:exported="true">
+            <intent-filter>
+                <action android:name="org.webapk.IDENTITY_SERVICE_API"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
